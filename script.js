@@ -519,7 +519,7 @@ displayCatalog = function (productsArray, contextTitle) {
 /* ==========================================================================
    DYNAMIC RUNTIME MOBILE DOM ALIGNMENT PATCH
    ========================================================================== */
-(function() {
+(function () {
     function enforceGlobalResponsiveLayout() {
         if (window.innerWidth > 991) return;
 
@@ -546,7 +546,7 @@ displayCatalog = function (productsArray, contextTitle) {
     window.addEventListener('resize', enforceGlobalResponsiveLayout);
     document.addEventListener('DOMContentLoaded', enforceGlobalResponsiveLayout);
     window.addEventListener('load', enforceGlobalResponsiveLayout);
-    
+
     // Interval check loop to maintain state alignment during page dynamic routing
     setInterval(enforceGlobalResponsiveLayout, 400);
 })();
@@ -555,7 +555,7 @@ displayCatalog = function (productsArray, contextTitle) {
 /* ==========================================================================
    DOM MATRIX SCREEN BOUNDS OVERRIDE ENGINE
    ========================================================================== */
-(function() {
+(function () {
     function recalibrateMobileViewports() {
         if (window.innerWidth > 991) return;
 
@@ -565,7 +565,7 @@ displayCatalog = function (productsArray, contextTitle) {
             if (el && !el.classList.contains('shop-grid-item-card')) {
                 // Skips individual item grids to protect catalog integrity
                 const currentWidth = el.style.width;
-                if(currentWidth && currentWidth !== '100%') {
+                if (currentWidth && currentWidth !== '100%') {
                     el.style.setProperty('width', '100%', 'important');
                     el.style.setProperty('max-width', '100%', 'important');
                 }
@@ -584,7 +584,7 @@ displayCatalog = function (productsArray, contextTitle) {
     window.addEventListener('resize', recalibrateMobileViewports);
     document.addEventListener('DOMContentLoaded', recalibrateMobileViewports);
     window.addEventListener('load', recalibrateMobileViewports);
-    
+
     // Constant loop engine to block framework script shifts
     setInterval(recalibrateMobileViewports, 350);
 })();
